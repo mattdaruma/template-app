@@ -1,0 +1,8 @@
+<div class="loading-panel" *ngIf="navigating | async as nav" [@fadeInOut]>
+    <div class="loading-panel-message">
+        <clr-spinner></clr-spinner>
+        <!--A span of text can go here and will align nicely with the spinner.-->
+        <!--The spinner alone looks pretty good though.-->
+    </div>
+</div>
+<router-outlet></router-outlet>

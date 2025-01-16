@@ -1,0 +1,31 @@
+<clr-main-container>
+    <clr-header>
+        <div class="branding">
+            <a [routerLink]="['/', 'main']">
+                <cds-icon shape="star"></cds-icon>
+                <span class="title">MoYaBe</span>
+            </a>
+        </div>
+        <div class="header-nav">
+            <span class="nav-link nav-text">{{(route.data | async)?.['main']['demo']}}</span>
+        </div>
+        <div class="header-actions">
+            <clr-dropdown>
+                <a href="javascript://" class="nav-link" clrDropdownTrigger>
+                    <cds-icon shape="ellipsis-vertical"></cds-icon>
+                </a>
+                <clr-dropdown-menu clrPosition="bottom-right" *clrIfOpen>
+                    <clr-dropdown>
+                        <button clrDropdownTrigger>Section</button>
+                        <clr-dropdown-menu clrPosition="bottom-right">
+                            <button [routerLink]="['/', 'main', 'section']" clrDropdownItem>Home</button>
+                            <button [routerLink]="['/', 'main', 'section', 'view']" clrDropdownItem>View</button>
+                        </clr-dropdown-menu>
+                        <button clrDropdownItem (click)="auth.token.next(null)">Sign Out</button>
+                    </clr-dropdown>
+                </clr-dropdown-menu>
+            </clr-dropdown>
+        </div>
+    </clr-header>
+    <router-outlet></router-outlet>
+</clr-main-container>

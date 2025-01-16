@@ -1,0 +1,23 @@
+
+<clr-main-container>
+    <clr-header>
+        <div class="branding">
+            <a [routerLink]="['/']">
+                <cds-icon shape="star"></cds-icon>
+                <span class="title">MoYaBe</span>
+            </a>
+        </div>
+    </clr-header>
+    <div class="content-container">
+        <div class="content-area">
+            <div class="sign-in-form" *ngIf="viewReady" [@fadeInOut]>
+                <clr-input-container>
+                    <label for="name">Token</label>
+                    <input [formControl]="tokenInput" clrInput type="text" id="token" name="token" (keydown.enter)="goToCallback()">
+                    <clr-control-helper>Just enter a token directly for now.</clr-control-helper>
+                  </clr-input-container>
+                  <button class="btn btn-primary" (click)="goToCallback()">Sign In</button>
+            </div>
+        </div>
+    </div>
+</clr-main-container>
